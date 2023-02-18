@@ -1,8 +1,8 @@
 export class Artist {
 
-    name: string;
-    spotifyURL: string;
-    imageURL: string;
+    public name: string;
+    public spotifyURL: string;
+    public imageURL: string;
 
     constructor(name: string, spotifyURL: string, imageURL: string) {
 

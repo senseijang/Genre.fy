@@ -2,11 +2,11 @@ import { Album } from "./album";
 
 export class ActiveNode {
 
-    album: Album;
+    // album: Album;
 
     constructor(spotifyData: any) {
 
-        this.album = new Album()
+        // this.album = new Album()
 
     }
 

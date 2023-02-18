@@ -1,9 +1,9 @@
 export class Track {
 
-    name: string;
-    spotifyURL: string;
-    imageURL: string;
-    length: number;
+    public name: string;
+    public spotifyURL: string;
+    public imageURL: string;
+    public length: number;
 
     constructor(name: string, spotifyURL: string, imageURL: string, length: number) {
 
