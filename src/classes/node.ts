@@ -1,13 +1,12 @@
 import { Album } from "./album";
-import { InactiveNode } from "./inactiveNode";
 
-export class ActiveNode extends InactiveNode {
+export class ActiveNode {
 
     album: Album;
 
     constructor(spotifyData: any) {
 
-        super(spotifyData);
+        this.album = new Album()
 
     }
 
