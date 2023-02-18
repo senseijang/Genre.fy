@@ -1,0 +1,5 @@
+{
+    "ID": "99988f98f66f487cb53336ea221415ae",
+    "SECRET": "70d8cfa3740b4d1fb77f9bc3a9c0109e",
+    "REDIRECT_URI": "http://localhost:8000/public/index"
+}
