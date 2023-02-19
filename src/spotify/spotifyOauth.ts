@@ -14,6 +14,8 @@ import spotifyConfig from "../config/spotify.json";
 class SpotifyOauth {
     public app!: Application;
 
+    public USER_TOKEN: string;
+
     private readonly CLIENT_ID = spotifyConfig.ID;
     private readonly CLIENT_SECRET = spotifyConfig.SECRET;
     private readonly REDIRECT_URI = spotifyConfig.REDIRECT_URI;
@@ -89,11 +91,11 @@ class SpotifyOauth {
             request.post(authOptions, (error, response, body) => {
                 if (!error && response.statusCode === 200) {
 
-                    const access_token = body.access_token;
+                    this.USER_TOKEN = body.access_token;
                     const refresh_token = body.refresh_token;
 
                     const options = {
-                        headers: {Authorization: "Bearer " + access_token},
+                        headers: {Authorization: "Bearer " + this.USER_TOKEN},
                         json: true,
                         url: "https://api.spotify.com/v1/me",
                     };
@@ -107,7 +109,7 @@ class SpotifyOauth {
                     // we can also pass the token to the browser to make requests from there
                     res.redirect("/#" +
                         querystring.stringify({
-                            access_token,
+                            access_token: this.USER_TOKEN,
                             refresh_token,
                         }));
                 } else {
