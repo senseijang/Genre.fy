@@ -9,7 +9,7 @@ import {Application, Request, Response} from "express";
 import express from "express";
 import querystring from "query-string";
 import request from "request";
-import spotifyConfig from "../config/spotify.json"
+import spotifyConfig from "../config/spotify.json";
 
 class SpotifyOauth {
     public app!: Application;
@@ -33,13 +33,18 @@ class SpotifyOauth {
         // tslint:disable-next-line:no-console
         console.log("Listening on 8000");
         app.listen(8000);
-        app.set('view engine', 'html')
 
-        app.get("/", (request, response) => {
+        // app.get("/", (request, response) => {
 
-            response.sendFile("public/index.html")
+        //     response.sendFile("public/index.html");
 
-        })
+        // });
+
+        // app.get("/success", (request, response) => {
+
+        //     response.sendFile("public/success.html")
+
+        // })
     }
 
     public getLogin(req: Request, res: Response): void {
