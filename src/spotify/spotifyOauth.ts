@@ -7,7 +7,6 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import {Application, Request, Response} from "express";
 import express from "express";
-import querystring from "query-string";
 import request from "request";
 import spotifyConfig from "../config/spotify.json";
 
@@ -49,14 +48,7 @@ class SpotifyOauth {
 
         // your application requests authorization
         const scope = "user-top-read";
-        res.redirect("https://accounts.spotify.com/authorize?" +
-            querystring.stringify({
-                client_id: this.CLIENT_ID,
-                redirect_uri: this.REDIRECT_URI,
-                response_type: "code",
-                scope,
-                state,
-            }));
+        res.redirect("https://accounts.spotify.com/authorize?" + `client_id=${this.CLIENT_ID}&redirect_uri=${this.REDIRECT_URI}&response_type=code&scope=${scope}&state=${state}`);
     }
 
     public getCallback(req: Request, res: Response): void {
@@ -68,10 +60,9 @@ class SpotifyOauth {
         const storedState = req.cookies ? req.cookies[this.STATE_KEY] : null;
 
         if (state === null || state !== storedState) {
-            res.redirect("/#" +
-                querystring.stringify({
-                    error: "state_mismatch",
-                }));
+
+            res.redirect("/#" + `error=state_mismatch`);
+
         } else {
             res.clearCookie(this.STATE_KEY);
             const authOptions = {
@@ -107,16 +98,9 @@ class SpotifyOauth {
                     });
 
                     // we can also pass the token to the browser to make requests from there
-                    res.redirect("/#" +
-                        querystring.stringify({
-                            access_token: this.USER_TOKEN,
-                            refresh_token,
-                        }));
+                    res.redirect("/#" + `access_token=${this.USER_TOKEN}&refresh_token=${refresh_token}`);
                 } else {
-                    res.redirect("/#" +
-                        querystring.stringify({
-                            error: "invalid_token",
-                        }));
+                    res.redirect("/#" + `error=invalid_token`);
                 }
             });
         }
