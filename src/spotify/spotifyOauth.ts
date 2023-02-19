@@ -22,7 +22,7 @@ class SpotifyOauth {
     public startExpress() {
 
         const app = express()
-            .use(express.static("public"))
+            .use(express.static("static"))
             .use(cors())
             .use(cookieParser());
 
@@ -34,17 +34,11 @@ class SpotifyOauth {
         console.log("Listening on 8000");
         app.listen(8000);
 
-        app.get("/", (request, response) => {
+        app.get("/success", (req, response) => {
 
-            response.sendFile("./src/static/index.html", { root: '.' });
+            response.sendFile("./static/success.html", { root: "." });
 
         });
-
-        app.get("/success", (request, response) => {
-
-            response.sendFile("./src/static/success.html", { root: '.' })
-
-        })
     }
 
     public getLogin(req: Request, res: Response): void {
