@@ -2,21 +2,49 @@
 #loggedin {
   display: none;
 }
+
 .text-overflow {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 500px;
 }
+
 h1 {
   font-size: 100pt;
 }
+
+.centered {
+  left: 0;
+  line-height: 200px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  width: 100%;
+}
+
 body {
   background-color: #212121;
   font-family: "Aileron", sans-serif;
   color: white;
   text-align: center;
 }
+
 #highlight {
   color: #4bd37b;
+}
+
+.login_button {
+  font-family: "Aileron", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: left;
+  color: #fff;
+  background-color: #4bd37b;
+  border-radius: 15px;
+}
+
+em {
+  color: #707070;
 }
