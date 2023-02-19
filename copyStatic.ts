@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 
-fs.copy('src/static', 'dist/public', (err) => {
+fs.copy('src/static', 'dist/static', (err) => {
     if(err) {
         console.error(err);
     } else {
