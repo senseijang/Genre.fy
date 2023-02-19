@@ -1,3 +1,22 @@
+#login,
+#loggedin {
+  display: none;
+}
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 500px;
+}
+h1 {
+  font-size: 100pt;
+}
 body {
   background-color: #212121;
+  font-family: "Aileron", sans-serif;
+  color: white;
+  text-align: center;
+}
+#highlight {
+  color: #4bd37b;
 }
