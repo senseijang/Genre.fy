@@ -1,0 +1,17 @@
+.top-artist {
+  text-align: center;
+  line-height: 10px;
+  top: 50%;
+}
+
+#top-artist-image {
+  width: 352px;
+  height: 343px;
+  border-radius: 75px;
+  background: #fff;
+  border: 10px solid #1db954;
+}
+
+.top-songs {
+  font-style: italic;
+}

@@ -11,3 +11,7 @@ fs.copy('src/static', 'dist/static', (err) => {
 fs.copy('src/css', 'dist/static/css', (err) => {
     err ? console.log(err) : console.log('copied css folder');
 })
+
+fs.copy('src/imgs', 'dist/static/imgs', (err) => {
+    err ? console.log(err) : console.log('copied imgs folder');
+})
