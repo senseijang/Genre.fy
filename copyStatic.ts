@@ -8,6 +8,6 @@ fs.copy('src/static', 'dist/static', (err) => {
     }
 });
 
-fs.copy('src/css', 'dist/css', (err) => {
+fs.copy('src/css', 'dist/static/css', (err) => {
     err ? console.log(err) : console.log('copied css folder');
 })
