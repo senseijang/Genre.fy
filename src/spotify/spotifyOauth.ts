@@ -34,17 +34,17 @@ class SpotifyOauth {
         console.log("Listening on 8000");
         app.listen(8000);
 
-        // app.get("/", (request, response) => {
+        app.get("/", (request, response) => {
 
-        //     response.sendFile("public/index.html");
+            response.sendFile("./src/static/index.html", { root: '.' });
 
-        // });
+        });
 
-        // app.get("/success", (request, response) => {
+        app.get("/success", (request, response) => {
 
-        //     response.sendFile("public/success.html")
+            response.sendFile("./src/static/success.html", { root: '.' })
 
-        // })
+        })
     }
 
     public getLogin(req: Request, res: Response): void {
