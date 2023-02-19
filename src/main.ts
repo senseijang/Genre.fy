@@ -1,4 +1,8 @@
 import SpotifyOauth from "./spotify/spotifyOauth";
 
-const app = new SpotifyOauth();
+//export so we can maniuplate instance of app
+export const app = new SpotifyOauth();
+
+//start express webserver
 app.startExpress();
+
