@@ -1,7 +1,7 @@
 .top-artist {
   text-align: center;
   line-height: 10px;
-  top: 63%;
+  top: 60%;
 }
 
 #top-artist-image {
@@ -40,4 +40,30 @@ a {
 
 figcaption {
   float: left;
+}
+
+table {
+  margin-top: 10%;
+  top: 10%;
+  width: 100%;
+  /* definitely a better solution elsewhere. */
+  margin-left: 6.5%;
+}
+
+td {
+  width: 20%;
+}
+
+h1 {
+  position: relative;
+  top: 10%;
+  text-align: center;
+}
+
+.captions {
+  text-align: left;
+}
+
+p {
+  font-size: 20pt;
 }
