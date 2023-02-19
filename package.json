@@ -9,6 +9,7 @@
     "prestart": "npm run build",
     "start": "node .",
     "dev": "ts-node-dev src/index.ts",
+    "test-server": "cd dist && node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
