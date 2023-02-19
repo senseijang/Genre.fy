@@ -1,17 +1,43 @@
 .top-artist {
   text-align: center;
   line-height: 10px;
-  top: 50%;
+  top: 63%;
 }
 
 #top-artist-image {
   width: 352px;
   height: 343px;
-  border-radius: 75px;
   background: #fff;
   border: 10px solid #1db954;
 }
 
 .top-songs {
   font-style: italic;
+}
+
+.recs {
+  height: 192px;
+  border-radius: 75px;
+  border: 10px solid #1db954;
+  display: flex;
+  float: left;
+  justify-content: space-between;
+}
+
+.recs:hover {
+  border: 10px solid orange;
+}
+
+img {
+  border-radius: 55px;
+  z-index: -999;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+figcaption {
+  float: left;
 }
