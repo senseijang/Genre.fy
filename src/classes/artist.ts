@@ -48,7 +48,7 @@ export class Artist {
                 if (body[i]) {
 
                     this.tracks.push(new Track(
-                        body[i].artists.toString().replace(",", ", "),
+                        body[i].artists.map((artist: any) => artist.name).toString().replace(/,/g, ", "),
                         body[i].id,
                         body[i].external_urls.spotify,
                         body[i].album.images[0].url,
