@@ -1,21 +1,16 @@
-import { Artist } from "./artist";
-import { Track } from "./track";
-
 export class Album {
 
-    public name: string;
-    public spotifyURL: string;
-    public imageURL: string;
-    public artist: Artist;
-    public songs: Track[];
+    name: string;
+    spotifyID: string;
+    spotifyURL: string;
+    image: string;
 
-    constructor(name: string, spotifyURL: string, imageURL: string, artist: Artist, songs: Track[]) {
+    constructor(name: string, spotifyID: string, spotifyURL: string, image: string) {
 
         this.name = name;
+        this.spotifyID = spotifyID;
         this.spotifyURL = spotifyURL;
-        this.imageURL = imageURL;
-        this.artist = artist;
-        this.songs = songs;
+        this.image = image;
 
     }
 
