@@ -20,6 +20,7 @@ export function log(...args: any) {
 
     string = string.trim()
 
+    // coloring
     const chalk = {
 
         red: (string: string) => { return "\x1b[38;2;255;90;90m" + string + "\x1b[0m" },
@@ -31,10 +32,12 @@ export function log(...args: any) {
 
     }
 
+    // if there is an object length (array), print each object
     if (object.length) {
         object.forEach(object => console.debug(object))
     }
 
+    // if the string matches this regex (line)
     if (/(^)(.*?)(?=$)/gm.test(string)) {
 
         let message = ''

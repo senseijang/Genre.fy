@@ -3,6 +3,9 @@ import { log } from "../logging/logger";
 import { Album } from "./album";
 import { Track } from "./track";
 
+/**
+ * Contains spotify artist information
+ */
 export class Artist {
 
     public name: string;
@@ -24,6 +27,7 @@ export class Artist {
 
     }
 
+    //fetch the top 5 tracks within this artist's library
     fetch() {
 
         request.get(`https://api.spotify.com/v1/artists/${this.spotifyID}/top-tracks?market=US`, {
@@ -45,6 +49,8 @@ export class Artist {
 
                 if (body[i]) {
 
+                    //push a new track and new album within the track
+                    //stacking like this isn't really recommended
                     this.tracks.push(new Track(
                         body[i].artists.map((artist: any) => artist.name).toString().replace(/,/g, ", "),
                         body[i].id,

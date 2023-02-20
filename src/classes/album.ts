@@ -1,3 +1,6 @@
+/**
+ * Contains album information retrieved from Track
+ */
 export class Album {
 
     name: string;
