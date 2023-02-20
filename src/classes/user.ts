@@ -31,7 +31,7 @@ export class User {
         }, (err, res, body) => {
 
             if (err) return log(err)
-            
+
             body = JSON.parse(body);
 
             this.name = body.display_name;
@@ -57,6 +57,12 @@ export class User {
             this.topArtist.fetch()
 
         })
+
+    }
+
+    getToken() {
+
+        return this.token;
 
     }
 }
