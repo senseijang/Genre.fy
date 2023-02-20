@@ -3,6 +3,9 @@ import { log } from "../logging/logger";
 import { Artist } from "./artist";
 import { User } from "./user";
 
+/**
+ * Stores information related to the user and recommended artists based on genre
+ */
 export class Node {
 
     public user: User
@@ -16,6 +19,7 @@ export class Node {
 
     }
 
+    // fetch our recommended artists
     fetch() {
 
         request.get('https://api.spotify.com/v1/me/top/artists?limit=6', {
@@ -33,6 +37,7 @@ export class Node {
 
             body = JSON.parse(body).items;
 
+            // iterate over the array of given artists
             body.forEach((index: number, item: any) => {
 
                 if (index == 0) return;

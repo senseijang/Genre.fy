@@ -1,3 +1,7 @@
+
+/**
+ * Custom formatting for dates
+ */
 export class Time {
     date: Date | null = null;
     second: number;
@@ -88,6 +92,9 @@ export class Time {
 
 }
 
+/**
+ * legacy function for older code
+ */
 export function time(value: number | void) {
 
     return new Time(value);

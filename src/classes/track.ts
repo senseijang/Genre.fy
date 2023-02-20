@@ -1,5 +1,8 @@
 import { Album } from "./album";
 
+/**
+ * Contains song information provided by spotify
+ */
 export class Track {
 
     public name: string;
