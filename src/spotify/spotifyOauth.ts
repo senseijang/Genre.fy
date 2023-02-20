@@ -12,6 +12,8 @@ import spotifyConfig from "../config/spotify.json";
 import { log } from "../logging/logger";
 import { InternalState } from "../objects/state";
 import { User } from "../classes/user";
+import { readFileSync } from "fs";
+import { Node } from "../classes/node";
 
 class SpotifyOauth {
     public app!: Application;
@@ -37,7 +39,7 @@ class SpotifyOauth {
 
         app.get("/success", (req, response) => {
 
-            if (!response.req.query.code) return response.send("401 - Not authorized.")
+            if (!response.req.query.code) return response.send("401 - Not authorized")
 
             response.sendFile("./static/success.html", { root: "." });
 
@@ -61,11 +63,8 @@ class SpotifyOauth {
 
                 if (body.access_token) {
 
-                    (InternalState[req.cookies[this.STATE_KEY]] = new User(body.access_token)).fetch();
+                    (InternalState[req.cookies[this.STATE_KEY]] = new Node(new User(body.access_token))).fetch();
 
-                    setTimeout(() => {
-                        log(InternalState)
-                    }, 1000);
 
                 }
 

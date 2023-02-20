@@ -1,10 +1,50 @@
-export class ActiveNode {
+import request from "request";
+import { log } from "../logging/logger";
+import { Artist } from "./artist";
+import { User } from "./user";
 
-    // album: Album;
+export class Node {
 
-    constructor(spotifyData: any) {
+    public user: User
+    public nextArtists: Artist[]
 
-        // this.album = new Album()
+    constructor(user: User) {
+
+        this.nextArtists = [];
+        this.user = user;
+        user.fetch();
+
+    }
+
+    fetch() {
+
+        request.get('https://api.spotify.com/v1/me/top/artists?limit=6', {
+
+            headers: {
+
+                "Authorization": `Bearer ${this.user.getToken()}`,
+                "Content-Type": "application/json"
+
+            }
+
+        }, (err, res, body) => {
+
+            if (err) throw log(err)
+
+            body = JSON.parse(body).items;
+
+            body.forEach((index: number, item: any) => {
+
+                if (index == 0) return;
+
+                let artist = new Artist(item.name, item.id, item.external_urls.spotify, item.images[0].url, this.user.getToken())
+                artist.fetch()
+
+                this.nextArtists.push(artist)
+
+            });
+
+        })
 
     }
 

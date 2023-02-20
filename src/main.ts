@@ -5,5 +5,3 @@ export const app = new SpotifyOauth();
 
 // start express webserver
 app.startExpress();
-
-
