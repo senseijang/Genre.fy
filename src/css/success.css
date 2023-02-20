@@ -1,0 +1,69 @@
+.top-artist {
+  text-align: center;
+  line-height: 10px;
+  top: 60%;
+}
+
+#top-artist-image {
+  width: 352px;
+  height: 343px;
+  background: #fff;
+  border: 10px solid #1db954;
+}
+
+.top-songs {
+  font-style: italic;
+}
+
+.recs {
+  height: 192px;
+  border-radius: 75px;
+  border: 10px solid #1db954;
+  display: flex;
+  float: left;
+  justify-content: space-between;
+}
+
+.recs:hover {
+  border: 10px solid orange;
+}
+
+img {
+  border-radius: 55px;
+  z-index: -999;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+figcaption {
+  float: left;
+}
+
+table {
+  margin-top: 10%;
+  top: 10%;
+  width: 100%;
+  /* definitely a better solution elsewhere. */
+  margin-left: 6.5%;
+}
+
+td {
+  width: 20%;
+}
+
+h1 {
+  position: relative;
+  top: 10%;
+  text-align: center;
+}
+
+.captions {
+  text-align: left;
+}
+
+p {
+  font-size: 20pt;
+}
