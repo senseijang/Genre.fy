@@ -1,15 +1,15 @@
 import { time } from "../util/exports"
 
 /**
- * 
+ *
  * Log to the console.
  *
  */
 export function log(...args: any) {
 
     let string = ""
-    let object: Object[] = []
-    let prefix = `[WEB] [${time().timeFormat}] `
+    const object: Object[] = []
+    const prefix = `[WEB] [${time().timeFormat}] `
 
     args.forEach((member: any) => {
 
@@ -20,7 +20,7 @@ export function log(...args: any) {
 
     string = string.trim()
 
-    let chalk = {
+    const chalk = {
 
         red: (string: string) => { return "\x1b[38;2;255;90;90m" + string + "\x1b[0m" },
         dred: (string: string) => { return "\x1b[38;2;222;0;0m" + string + "\x1b[0m" },
@@ -39,7 +39,7 @@ export function log(...args: any) {
 
         let message = ''
 
-        let lines = string.match(/(^)(.*?)(?=$)/gm)
+        const lines = string.match(/(^)(.*?)(?=$)/gm)
 
         if (lines?.length) {
 

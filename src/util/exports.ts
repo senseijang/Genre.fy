@@ -16,10 +16,10 @@ export class Time {
 
         if (value) {
 
-            if (isNaN(value)) throw 'Value is not a number.'
-    
-            let date = new Date(value);
-    
+            if (isNaN(value)) throw new Error('Value is not a number.')
+
+            const date = new Date(value);
+
             this.date = date;
             this.second = date.getSeconds()
             this.minute = date.getMinutes()
@@ -29,31 +29,31 @@ export class Time {
             this.year = date.getFullYear()
             this.epoch = date.getTime()
             this.dateString = date.toDateString()
-    
-            let d = this.hour == 12 ? 'PM'
+
+            const d = this.hour == 12 ? 'PM'
                 : this.hour > 12 ? 'PM'
                     : 'AM';
-    
-            let h = this.hour == 12 || (this.hour > 9 && this.hour < 12) ? `${this.hour}`
+
+            const h = this.hour == 12 || (this.hour > 9 && this.hour < 12) ? `${this.hour}`
                 : this.hour > 12 ? this.hour - 12 > 9 ? `${this.hour - 12}`
                     : `0${this.hour - 12}`
                     : `0${this.hour}`
-    
-            let m = String(this.minute).length == 2 ? this.minute
+
+            const m = String(this.minute).length == 2 ? this.minute
                 : `0${this.minute}`;
-    
-            let s = String(this.second).length == 2 ? this.second
+
+            const s = String(this.second).length == 2 ? this.second
                 : `0${this.second}`
-    
+
             this.timeFormat = `${h}:${m}:${s}-${d} EST`;
             this.dateFormat = `${this.month}-${this.day}-${this.year}`
             this.fullTime = this.dateFormat + ' ' + this.timeFormat
-    
-    
+
+
         } else {
-    
-            let date = new Date();
-    
+
+            const date = new Date();
+
             this.second = date.getSeconds()
             this.minute = date.getMinutes()
             this.hour = date.getHours()
@@ -62,26 +62,26 @@ export class Time {
             this.year = date.getFullYear()
             this.epoch = date.getTime()
             this.dateString = date.toDateString()
-    
-            let d = this.hour == 12 ? 'PM'
+
+            const d = this.hour == 12 ? 'PM'
                 : this.hour > 12 ? 'PM'
                     : 'AM';
-    
-            let h = this.hour == 12 || (this.hour > 9 && this.hour < 12) ? `${this.hour}`
+
+            const h = this.hour == 12 || (this.hour > 9 && this.hour < 12) ? `${this.hour}`
                 : this.hour > 12 ? this.hour - 12 > 9 ? `${this.hour - 12}`
                     : `0${this.hour - 12}`
                     : `0${this.hour}`
-    
-            let m = String(this.minute).length == 2 ? this.minute
+
+            const m = String(this.minute).length == 2 ? this.minute
                 : `0${this.minute}`;
-    
-            let s = String(this.second).length == 2 ? this.second
+
+            const s = String(this.second).length == 2 ? this.second
                 : `0${this.second}`
-    
+
             this.timeFormat = `${h}:${m}:${s}-${d} EST`;
             this.dateFormat = `${this.month}-${this.day}-${this.year}`
             this.fullTime = this.dateFormat + ' ' + this.timeFormat
-    
+
         }
 
     }
@@ -91,5 +91,5 @@ export class Time {
 export function time(value: number | void) {
 
     return new Time(value);
-    
+
 }
