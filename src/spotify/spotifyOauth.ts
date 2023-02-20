@@ -112,11 +112,9 @@ class SpotifyOauth {
             };
 
             request.post(authOptions, (error, response, body) => {
-                log("User token:", body.access_token)
                 if (!error && response.statusCode === 200) {
                     const USER_TOKEN = body.access_token;
                     const refresh_token = body.refresh_token;
-                    log("User token:", USER_TOKEN, "refresh token", refresh_token)
 
                     const options = {
                         headers: { Authorization: "Bearer " + USER_TOKEN },
@@ -156,11 +154,9 @@ class SpotifyOauth {
         };
 
         request.post(authOptions, (error, response, body) => {
-            log("User token:", body.access_token)
             if (!error && response.statusCode === 200) {
 
                 const USER_TOKEN = body.access_token;
-                log("User token:", USER_TOKEN)
 
                 res.send({
                     access_token: USER_TOKEN,

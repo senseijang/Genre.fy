@@ -41,8 +41,6 @@ export class Artist {
 
             body = JSON.parse(body).tracks;
 
-            log(body[0].album)
-
             for(let i = 0; i < 5; i++) {
 
                 if (body[i]) {
