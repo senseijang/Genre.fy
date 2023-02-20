@@ -38,7 +38,7 @@ export class Node {
             body = JSON.parse(body).items;
 
             // iterate over the array of given artists
-            body.forEach((index: number, item: any) => {
+            body.forEach((item: any, index: number) => {
 
                 if (index == 0) return;
 
