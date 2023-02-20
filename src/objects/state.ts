@@ -1,3 +1,3 @@
-import { User } from "src/classes/user";
+import { Node } from "../classes/node";
 
-export const InternalState: {[cookie: string]: User} = {};
+export const InternalState: {[cookie: string]: Node} = {};
