@@ -4,10 +4,11 @@ import { Artist } from "./artist";
 
 export class User {
 
-    private name: string;
-    private token: string;
-    private topArtist: Artist;
-    private expires: number;
+    public name: string;
+    public topArtist: Artist;
+    public expires: number;
+
+    private readonly token: string;
 
     constructor(token: string) {
 
@@ -30,6 +31,8 @@ export class User {
         }, (err, res, body) => {
 
             if (err) return log(err)
+            
+            body = JSON.parse(body);
 
             this.name = body.display_name;
 
@@ -56,5 +59,4 @@ export class User {
         })
 
     }
-
 }
