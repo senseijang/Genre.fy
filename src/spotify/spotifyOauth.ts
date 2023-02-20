@@ -63,7 +63,7 @@ class SpotifyOauth {
 
                 if (body.access_token) {
 
-                    (InternalState[this.STATE_KEY] = new User(body.access_token)).fetch();
+                    (InternalState[req.cookies[this.STATE_KEY]] = new User(body.access_token)).fetch();
 
                 }
 
